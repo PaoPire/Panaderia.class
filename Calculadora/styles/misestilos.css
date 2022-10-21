@@ -1,0 +1,70 @@
+/* Estilos generales */
+
+* {
+  box-sizing: border-box; /* borrar margin y padding */
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --size-w-caja: 540px;
+  --size-w-input-texto: 145px; /* ancho que van a tener los input de tipo texto */
+  --color-primario: rgba (7, 63, 100, 0.986); /* el rgba tiene un poco de transparencia que es el ultimo valor */
+  --color-secundario: #61a3d8;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-primario);
+  font-size: 1.2rem;
+}
+
+header {
+  text-align: center;
+  color: white;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+p,
+input,
+label {
+  margin: 1rem;
+}
+
+div {
+  margin-top: 2.5rem;
+}
+
+/* estilos del main */
+
+.container {
+  width: var(--size-w-caja);
+  height: auto; /* alto por defecto */
+  min-height: 100px; /* para tener un tope para que no pueda crecer de mas o encogerse de mas */
+  margin: 7.14rem 1.4rem;
+  border-radius: 5px;
+  background-color: var(--color-secundario);
+  position: absolute;
+  top: 5vh;
+  left: calc((100% - var(--size-w-caja)) / 2);
+}
+
+/* estilos de la calculadora */
+
+.base {
+  width: 100%; /* seria 100% de nuestro propio main */
+  overflow: hidden; /* permite que no sobresalga, que quede oculto */
+}
+
+.base h2 {
+  font-size: 2rem;
+  text-align: center;
+  color: rgb(15, 15, 39);
+  background-color: white;
+  box-shadow: 0px 2px 5px var(--color-primario);
+}
