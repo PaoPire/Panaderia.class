@@ -12,120 +12,142 @@
 
 <body>
     <header>
-        <h1 class="title-main">Panadería Migas Amigas</h1>
+        <a href="index.html" aria-label="Enlace para ir a la página principal">
+           <img class="logo" src="../images/LOGOlogo.png" alt="Enlace para ir a la página principal" />
+       </a>
 
-        <a href="index.html">
-            <img src="../images/LOGOlogo.png" alt="Logo Panadería" />
-        </a>
+       <h1 id="titulo">Panadería Migas Amigas</h1>
 
-        <form action="">
-            <input type="search" placeholder="¿Qué deseas buscar?" />
-        </form>
+       <form action="">
+           <input type="search" placeholder="¿Qué deseas buscar?" />
+       </form>
+   </header>
+   
+   <main>
+       <nav id="menu">
+           <ul>
+               <li><a href="cafeteria.html" aria-label="Enlace a la página de cafetería">Cafetería</a></li>
+               <li><a href="panaderia.html" aria-label="Enlace a la página de panadería">Panadería</a>
+                   <ul>
+                       <li><a href="#" aria-label="Enlace a la página de productos">Productos</a></li>
+                       <li><a href="#"aria-label="Enlace a la página de descripción">Descripción</a></li>
+                       <li><a href="#" aria-label="Enlace a la página de sistema de elaboración">Sistema de elaboración</a></li>
+                   </ul>
+               </li>
+               <li><a href="pasteleriaBolleria.html" aria-label="Enlace a la página de pastelería">Pastelería - Bollería</a></li>
+               <li><a href="empanadas.html" aria-label="Enlace a la página de empanadas">Empanadas</a></li>
+               <li><a href="contacto.html" aria-label="Enlace a la página de contacto">Contacto</a></li>
+           </ul>
+       </nav>
 
-        <nav id="nav-menu" class="nav-menu">
-            <ul>
-                <li><a href="cafeteria.html" class="nav-menu--item">Cafetería</a></li>
-                <li><a href="panaderia.html" class="nav-menu--item">Panadería</a>
-                    <ul>
-                        <li><a href="#">Productos</a></li>
-                        <li><a href="#">Descripción</a></li>
-                        <li><a href="#">Sistema de elaboración</a></li>
-                    </ul>
-                </li>
-                <li><a href="pasteleriaBolleria.html" class="nav-menu--item">Pastelería - Bollería</a></li>
-                <li><a href="empanadas.html" class="nav-menu--item">Empanadas</a></li>
-                <li><a href="contacto.html" class="nav-menu--item">Contacto</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
         <section aria-label="formulario de pedido">
-            <form action="#" method="post">
-                <fieldset>
-                    <legend>Datos del Contacto</legend>
+            <h2>Contacta con nosotros</h2>
 
-                    <label for="nombre">Nombre: </label>
-                    <input name='nombre' type='text' /><br>
+            <form action="#" method="post" autocomplete="on">
+                <fieldset id="formulario">
+                    <fieldset>
+                        <legend>Datos del Contacto</legend>
+                        <p>
+                            <label for="nombre" aria-label="nombre">Nombre: </label>
+                            <input type="text" name="nombre" id="nombre" maxlength="20"                            placeholder="Estefania" aria-label="campo del nombre" 
+                            size="20" pattern="[a-zA-ZáéíóúÁÉÍÓÚÑñç ]{2,20}"
+                            aria-labelledby="obligatorio" autofocus title="Nombre de pila. 
+                            Mínimo 2 carácteres y máximo 20" >
+                        </p>
+                        <p>
+                            <label for="apellidos" aria-label="apellido">Apellidos: </label>
+                            <input type="text" name="apellidos" id="apellidos" maxlength="30"
+                            placeholder="Sanchez Rodriguez" pattern="[a-zA-ZáéíóúüÁÉÍÓÚÚñç ]{2,30}" 
+                            size="30" aria-label="Campo de apellidos"
+                            title="Indique los apellidos. 2 caracteres mínimo y 30 máximo. Admite tíldes."> 
+                        </p>
+                        <p>
+                            <label for="email">Email: </label>
+                            <input type="email" name="email" id="email" placeholder="estefania@gmail.com"
+                            size="30" aria-labelledby="obligatorio" aria-label="campo del correo"
+                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required
+                            title="Indica tu email de contacto (ejemplo: nombre@correo.es). Letras, números y $ %.-">
+                        </p>
+                        <p>
+                            <label for="telefono">Número de teléfono:</label>
+                            <input type="tel" name="telefono" id="telefono" title="teléfono de contacto. Opcional"
+                            size="10" maxlength="10" placeholder="611-611611" pattern="[0-9]{3}-[0-9]{6}">
+                        </p>
 
+                    </fieldset>
 
-                    <label for="apellidos">Apellidos: </label>
-                    <input name='Apellidos' type='text' /><br>
-
-                    <label for="email">Email: </label>
-                    <input name='email' type='email' /><br><br>
-
-                    <label for="telefono">Número de teléfono:</label>
-                    <input type="tel" id="telefono"><br>
-
-                </fieldset>
-
-                <fieldset>
+                <fieldset id="entrega">
                     <legend>Datos de entrega</legend>
-
-                    <label for="fecha">Fecha de entrega: </label>
-                    <input type="date" id="fecha">
-
-                    <label for="entrega">Modo de entrega: </label>
-                    <!--Etiqueta label Estudios-->
-                    <select id="dino-select">
+                    <p>
+                        <label for="fecha">Fecha de entrega: </label>
+                        <input type="date" name="fecha" id="fecha" min="2022-12-15" value="2023-01-01"
+                        max="2023-12-15" required>
+                    </p>
+                    <p>
+                        <label for="entrega">Modo de entrega: </label>
+                        <select name="entrega" id="entrega">
                         <optgroup label="Envío a domicilio">
-                            <option>Te lo llevamos a casa</option>
-                            <option>Solicitas servicio a empresa privada</option>
+                            <option value="0">Te lo llevamos a casa</option>
+                            <option value="1">Solicitas servicio a empresa privada</option>
                         </optgroup>
                         <optgroup label="Recoger en Panadería">
-                            <option>Para comer aquí</option>
-                            <option>Para llevar</option>
+                            <option value="2" selected>Para comer aquí</option>
+                            <option value="3">Para llevar</option>
                         </optgroup>
-                    </select><br><br>
+                    </select>
                 </fieldset>
 
-                <fieldset>
+                <fieldset id="productos">
                     <legend>Qué productos desea: </legend>
                     <label for="seleccione">Seleccione</label>
                     <select id="product-select">
                         <optgroup label="Panadería">
-                            <option value="">Pan de cerelaes</option>
-                            <option value="">Pan payés</option>
-                            <option value="">Hogaza de Leon</option>
-                            <option value="">Pan germinado</option>
-                            <option value="">Pan de leche</option>
-                            <option value="">Pan de espelta</option>
-                            <option value="">Pan candeal</option>
-                            <option value="">Pan trenzado</option>
-                            <option value="">Pan de centeno</option>
-                            <option value="">Pan de molde</option>
+                            <option value="0">Pan de cerelaes</option>
+                            <option value="1">Pan payés</option>
+                            <option value="2">Hogaza de Leon</option>
+                            <option value="3">Pan germinado</option>
+                            <option value="4">Pan de leche</option>
+                            <option value="5">Pan de espelta</option>
+                            <option value="6">Pan candeal</option>
+                            <option value="7">Pan trenzado</option>
+                            <option value="8">Pan de centeno</option>
+                            <option value="9">Pan de molde</option>
                         </optgroup>
                         <optgroup label="Pastelería - Bollería">
-                            <option value="">Baklava</option>
-                            <option value="">Trufas</option>
-                            <option value="">Surtido</option>
-                            <option value="">Cheesecake</option>
-                            <option value="">Croissant</option>
-                            <option value="">Tarta de chocolate</option>
-                            <option value="">Mini-cakes</option>
-                            <option value="">Tarta alegría</option>
+                            <option value="10">Baklava</option>
+                            <option value="11">Trufas</option>
+                            <option value="12">Surtido</option>
+                            <option value="13">Cheesecake</option>
+                            <option value="14">Croissant</option>
+                            <option value="15">Tarta de chocolate</option>
+                            <option value="16">Mini-cakes</option>
+                            <option value="17">Tarta alegría</option>
                         </optgroup>
                         <optgroup label="Empanadas">
-                            <option value="">Empanada de carne con verduras</option>
-                            <option value="">Empanada de espinacas con queso de cabra</option>
-                            <option value="">Empanada de pollo</option>
-                            <option value="">Empanada Mixta</option>
+                            <option value="18">Empanada de carne con verduras</option>
+                            <option value="19" selected>Empanada de espinacas con queso de cabra</option>
+                            <option value="20">Empanada de pollo</option>
+                            <option value="21">Empanada Mixta</option>
                         </optgroup>
                     </select>
                 </fieldset>
-                Comentarios, información adicional:
-                <textarea name="textarea" rows="10" cols="50" placeholder="Comentarios"></textarea>
-
-                <input type="submit" value="Enviar" />
+                <p id="comentarios">
+                    Comentarios, información adicional:
+                    <textarea name="textarea" rows="10" cols="50" placeholder="Escribe aquí tus comentarios"></textarea>
+                </p>
+                <p id="boton">
+                    <input type="submit" class="boton" value="Enviar">
+                    <input type="reset" class="boton" value="Limpiar" id="limpiar">
+                    <label for="limpiar" class="oculto">Limpiar formulario</label>
+                </p>
+            </fieldset>
             </form>
-
         </section>
         <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2963.0714134985046!2d-8.647939284275754!3d42.0416489631418!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd259a910624ddef%3A0x549a4fc4944d844d!2sR%C3%BAa%20Barca%2C%2036700%20Tui%2C%20Pontevedra!5e0!3m2!1ses!2ses!4v1665777543649!5m2!1ses!2ses"
             width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"></iframe>
-
+    </main>
         <footer>
             <h2>CONTACTO</h2>
             <img src="../images/telefono.png" alt="Ícono telefono">
@@ -152,7 +174,8 @@
                 gustaba inventar máquinas nuevas. Cuando se le ocurrió que podía inventar una de uso comercial para
                 cortar
                 pan vendió sus tres joyerías y utilizó
-                ese dinero para financiar <a href="#">Leer más...</a>
+                ese dinero para financiar <a href="http://www.la-panadera.com/la-panadera/pan-de-molde-te-sabes-su-historia/" 
+                aria-label="Enlace a la página de la historia del pan molde">Leer más...</a>
             </p>
         </section>
         <div aria-label="promociones">
@@ -171,7 +194,8 @@
                 la
                 mayoría de los hogares, serán considerados pan común. Para que el pan sea considerado integral, se
                 exigirá
-                que el 100% de la harina también lo sea. <a href="#">Leer más...</a>
+                que el 100% de la harina también lo sea. <a href="https://www.publico.es/ahorro-consumo-responsable/asi-sera-el-pan-que-compras-con-la-nueva-ley/" 
+                aria-label="Enlace a la página sobre el pan integral">Leer más...</a>
             </p>
         </section>
     </aside>

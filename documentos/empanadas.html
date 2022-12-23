@@ -13,34 +13,34 @@
 <body>
 
     <header>
-        <h1 class="title-main">Panadería Migas Amigas</h1>
+        <a href="index.html" aria-label="Enlace para ir a la página principal">
+           <img class="logo" src="../images/LOGOlogo.png" alt="Enlace para ir a la página principal" />
+       </a>
 
-        <a href="index.html">
-            <img src="../images/LOGOlogo.png" alt="Logo Panadería" />
-        </a>
+       <h1 id="titulo">Panadería Migas Amigas</h1>
 
-        <form action="">
-            <input type="search" placeholder="¿Qué deseas buscar?" />
-        </form>
+       <form action="">
+           <input type="search" placeholder="¿Qué deseas buscar?" />
+       </form>
+   </header>
+   
+   <main>
+       <nav id="menu">
+           <ul>
+               <li><a href="cafeteria.html" aria-label="Enlace a la página de cafetería">Cafetería</a></li>
+               <li><a href="panaderia.html" aria-label="Enlace a la página de panadería">Panadería</a>
+                   <ul>
+                       <li><a href="#" aria-label="Enlace a la página de productos">Productos</a></li>
+                       <li><a href="#"aria-label="Enlace a la página de descripción">Descripción</a></li>
+                       <li><a href="#" aria-label="Enlace a la página de sistema de elaboración">Sistema de elaboración</a></li>
+                   </ul>
+               </li>
+               <li><a href="pasteleriaBolleria.html" aria-label="Enlace a la página de pastelería">Pastelería - Bollería</a></li>
+               <li><a href="empanadas.html" aria-label="Enlace a la página de empanadas">Empanadas</a></li>
+               <li><a href="contacto.html" aria-label="Enlace a la página de contacto">Contacto</a></li>
+           </ul>
+       </nav>
 
-        <nav id="nav-menu" class="nav-menu">
-            <ul>
-                <li><a href="cafeteria.html" class="nav-menu--item">Cafetería</a></li>
-                <li><a href="panaderia.html" class="nav-menu--item">Panadería</a>
-                    <ul>
-                        <li><a href="#">Productos</a></li>
-                        <li><a href="#">Descripción</a></li>
-                        <li><a href="#">Sistema de elaboración</a></li>
-                    </ul>
-                </li>
-                <li><a href="pasteleriaBolleria.html" class="nav-menu--item">Pastelería - Bollería</a></li>
-                <li><a href="empanadas.html" class="nav-menu--item">Empanadas</a></li>
-                <li><a href="contacto.html" class="nav-menu--item">Contacto</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
         <article aria-label="nuestras empanadas">
             <section>
                 <img src="../images/carneVerdura.png" alt="empanada de carne con verdura">
@@ -66,7 +66,7 @@
             </section>
         </article>
 
-    </main>
+ 
 
     <aside>
         <section>
@@ -80,7 +80,8 @@
                 gustaba inventar máquinas nuevas. Cuando se le ocurrió que podía inventar una de uso comercial para
                 cortar
                 pan vendió sus tres joyerías y utilizó
-                ese dinero para financiar <a href="#">Leer más...</a>
+                ese dinero para financiar <a href="http://www.la-panadera.com/la-panadera/pan-de-molde-te-sabes-su-historia/" 
+                aria-label="Enlace a la página de la historia del pan molde">Leer más...</a>
             </p>
         </section>
         <div aria-label="promociones">
@@ -99,10 +100,12 @@
                 la
                 mayoría de los hogares, serán considerados pan común. Para que el pan sea considerado integral, se
                 exigirá
-                que el 100% de la harina también lo sea. <a href="#">Leer más...</a>
+                que el 100% de la harina también lo sea. <a href="https://www.publico.es/ahorro-consumo-responsable/asi-sera-el-pan-que-compras-con-la-nueva-ley/" 
+                aria-label="Enlace a la página sobre el pan integral">Leer más...</a>
             </p>
         </section>
     </aside>
+   </main>
     <footer>
         <h2>CONTACTO</h2>
         <img src="../images/telefono.png" alt="Ícono telefono">
